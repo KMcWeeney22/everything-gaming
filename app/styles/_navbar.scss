@@ -1,0 +1,28 @@
+// remove  margin under navbar
+.header{
+
+margin-bottom: 150px;
+
+  .navbar {
+    margin-bottom: 0px;
+    border: none;
+    background-color: white;
+
+    // navbar container
+    .container {
+      margin-left: 0px;
+
+      .navbar-header {
+        margin-left: 20px;
+        padding-right: 50px;
+      }//end navbar-header
+
+    }//end container
+  }// end navbar
+}
+
+@media screen and (max-width: 766px) {
+  div.header {
+    padding: 0px;
+  }
+}

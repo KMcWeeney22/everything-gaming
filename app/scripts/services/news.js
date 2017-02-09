@@ -14,7 +14,7 @@
 
      // Public API here
      return $resource('https://newsapi.org/v1/articles?source=polygon&sortBy=top&apiKey=3ec84363d71d430a9c7afaf3d85adbb8', {}, {
-       articles: {
+       get: {
          method:'GET',
          isArray:false
        }

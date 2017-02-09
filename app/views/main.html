@@ -1,18 +1,12 @@
-<div ng-app class="jumbotron" ng-controller="MainCtrl">
-  <h1>Video Game News</h1>
+<div ng-app class="game-news" ng-controller="MainCtrl">
+  <h3>Recent Stories</h3>
   <p class="lead">
-    <div ng-init="website='Polygon'">
-      <dl>
-        <dt>Title</dt>
-        <dd>{{gameNews.articles[0].title}}</dd>
-        <dt>Author:</dt>
-        <dd>{{gameNews.articles[0].author}}</dd>
-        <dt>Description:</dt>
-        <dd>{{gameNews.articles[0].description}}</dt>
-        <dd><a href="{{gameNews.articles[0].url}}">{{gameNews.articles[0].url}}</a></dd>
-        <dd><img class="img-responsive" ng-src="{{gameNews.articles[0].urlToImage}}"></dd>
-        <dd>{{gameNews.articles[0].publishedAt}}</dd>
-      </dl>
-    </div>
+        <div class="article-data container-fluid" ng-repeat="item in gameNews | limitTo: 6 | filter: {image}">
+          <a class="article-image" href="{{item.url}}"><img class="img-responsive" ng-src="{{item.image}}"></a>
+          <a id="article-title" href="{{item.url}}"><p>{{item.title}}</p></a>
+        </div>
+        <!--<button ng-click="prev()">Newer</button>
+        <span>{{page}}</span>
+        <button ng-click="next()">Older</button>0-->
   </p>
 </div>

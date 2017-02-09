@@ -1,7 +1,15 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+//Override Bootstrap Variables
+@import "variables";
+
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+
+// additional CSS files
+@import "navbar";
+@import "game-news";
 
 .browsehappy {
   margin: 0.2em 0;
@@ -12,11 +20,22 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  background-image: url('http://inspirationseek.com/wp-content/uploads/2016/03/Horizon-Zero-Dawn-Game-Wallpaper.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 100% 100%;
+  min-height: 100%;
+  min-width: 100%;
 }
+
+.container {
+  padding: 0px;
+}
+
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
@@ -25,7 +44,6 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -39,7 +57,9 @@ body {
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  color: #777;
+  margin-top: 100px;
+  background-color: $white-bg-op;
+  color: black;
   border-top: 1px solid #e5e5e5;
 }
 
@@ -47,45 +67,15 @@ body {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
 
   /* Remove the padding we set earlier */
   .header,
-  .marketing,
   .footer {
     padding-left: 0;
     padding-right: 0;
   }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+
 }
