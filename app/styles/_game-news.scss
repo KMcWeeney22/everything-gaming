@@ -1,7 +1,14 @@
-.game-news {
+#game-media {
+  position: relative;
   background-color: $white-bg-op;
   padding-bottom: 30px;
   border-radius: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+  text-align: center;
+}
+
+.game-news {
 
 h3 {
   text-align: center;
@@ -14,7 +21,6 @@ h3 {
 
 .article-data {
   height: 290px;
-  width: 300px;
   padding: 20px;
   word-wrap: break-word;
   vertical-align: top;
@@ -37,13 +43,34 @@ h3 {
 }
 
 @media screen and (min-width: 767px) {
-  .article-data {
-    display: inline-block;
-  }
+
+
 }
 
 @media screen and (max-width: 766px) {
+  #game-media {
+    text-align: center;
+
+    .game-reviews {
+      display: none;
+    }
+
+  .game-news {
+    height: 100%;
+    width: 100%;
+
+  .row {
+    border-right: none;
+    padding-right: 0;
+  }
+
   .article-data {
     display: block;
+    text-align: center;
+    padding-right: 15px;
+    padding-left: 15px;
+
   }
+ }
+}
 }

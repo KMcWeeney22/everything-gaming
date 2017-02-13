@@ -11,12 +11,13 @@ angular.module('everythingGamingApp')
   .controller('MainCtrl', function ($scope, $http) {
       $http({
         method: 'GET',
-        url: 'https://igdbcom-internet-game-database-v1.p.mashape.com/pulses/?limit=50&fields=*',
-        headers: {'X-Mashape-Key': '81Ijzs42QnmshidOFbjlqROUbwx2p16G7L1jsn7IhaFqBrAuA8', 'Accept': 'application/json'}
+        url: 'https://newsapi.org/v1/articles?source=polygon&sortBy=top&apiKey=3ec84363d71d430a9c7afaf3d85adbb8',
+
       }).then(function newsSuccess(response) {
         $scope.gameNews = response.data;
 
       }, function newsError (response) {
         $scope.gameNews = response.statusText;
       });
+
   });
