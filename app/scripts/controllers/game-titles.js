@@ -21,15 +21,4 @@ angular.module('everythingGamingApp')
       $scope.topGameTitles = response.statusText;
 
     });
-
-    $http({
-      method: 'GET',
-      url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f17639e3d18eca2dea2f321aaf3e2e84&format=json&nojsoncallback=1&text=horizon+zero+dawn&extras=url_m'
-
-    }).then(function (response){
-      $scope.gameImages = response.data;
-
-    }, function (response) {
-      $scope.gameImages = response.statusText;
-    });
   });

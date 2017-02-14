@@ -1,22 +1,18 @@
 <section id="game-media">
   <div ng-app class="game-data">
     <div class="row">
-      <div class="game-titles col-xs-12 col-sm-8 col-md-8" ng-controller="GameTitlesCtrl">
+      <div class="game-titles col-xs-12 col-sm-8 col-md-9" ng-controller="GameTitlesCtrl">
         <h3>Top Rated Games</h3>
-        <div ng-repeat="photo in gameImages.photos.photo">
-          <img class="img-responsive" ng-src="{{photo.url_m}}">
-        </div>
-        <div class="game-title-results col-xs-6 col-sm-6 col-md-6" ng-repeat="item in topGameTitles">
-          <a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="{{item.cover.url}}"></a>
+        <div class="game-title-results col-xs-6 col-sm-6 col-md-6" ng-repeat="item in topGameTitles | limitTo: 8">
+          <a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a>
           <a href="{{item.url}}"><p>{{item.name}}</p></a>
-
         </div>
       </div>
 
-      <div class="game-news col-xs-12 col-sm-4 col-md-4" ng-controller="MainCtrl">
+      <div class="game-news col-xs-12 col-sm-3 col-md-3" ng-controller="MainCtrl">
       <p class="lead">
         <h3>Recent Stories</h3>
-        <div class="article-data" ng-repeat="article in gameNews.articles | limitTo: 8">
+        <div class="article-data" ng-repeat="article in gameNews.articles | limitTo: 6">
             <a class="article-image" href="{{article.url}}"><img class="img-responsive" ng-src="{{article.urlToImage}}"></a>
             <a id="article-title" href="{{article.url}}"><p>{{article.title}}</p></a>
         </div>

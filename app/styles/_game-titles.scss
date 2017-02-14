@@ -1,11 +1,17 @@
 .game-titles {
-text-align: center;
+  min-height: 400px;
+  clear: both;
+
+  h3 {
+    padding-top: 30px;
+  }
 
   .game-title-results {
-    min-height: 200px;
+    padding: 40px;
 
     .img-responsive {
-      text-align: center;
+      margin: auto;
+
     }
   }
 }
