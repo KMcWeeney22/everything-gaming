@@ -4,10 +4,15 @@
 
   h3 {
     padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   .game-title-results {
-    padding: 40px;
+    list-style-type: none;
+    display: inline-block;
+    float: left;
+    width: 48%;
+    padding: 20px;
 
     .img-responsive {
       margin: auto;

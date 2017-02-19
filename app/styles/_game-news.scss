@@ -1,7 +1,6 @@
 #game-media {
   position: relative;
   background-color: $white-bg-op;
-  padding-bottom: 30px;
   border-radius: 20px;
   padding-right: 50px;
   padding-left: 50px;
@@ -9,16 +8,19 @@
 }
 
 .game-news {
+  float: right;
+  border-left: 1px solid black;
+  padding-left: 50px;
 
-h3 {
-  text-align: center;
-  padding-top: 30px;
-  padding-bottom: 40px;
-}
+  h3 {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
 
-#article-title {
-  padding-top: 10px;
-}
+  #article-title {
+    padding-top: 10px;
+  }
 
 .article-data {
   padding-bottom: 30px;

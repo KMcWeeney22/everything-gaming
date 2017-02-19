@@ -31,6 +31,16 @@ angular
         controller: 'GameTitlesCtrl',
         controllerAs: 'gameTitles'
       })
+      .when('/upcoming', {
+        templateUrl: 'views/upcoming.html',
+        controller: 'UpcomingCtrl',
+        controllerAs: 'upcoming'
+      })
+      .when('/recent', {
+        templateUrl: 'views/recent.html',
+        controller: 'RecentCtrl',
+        controllerAs: 'recent'
+      })
       .otherwise({
         redirectTo: '/'
       });
