@@ -1,39 +1,48 @@
 <section id="game-media">
   <div ng-app class="game-data">
     <div class="row">
-      <div class="col-xs-12 col-sm-9 col-md-8">
-      <uib-tabset active="activeTop" justified="true">
-        <uib-tab index="0" heading="Top">
-          <ul class="game-titles" ng-controller="GameTitlesCtrl">
-            <h3>Top Rated Games</h3>
-            <li class="game-title-results" ng-repeat="item in topGameTitles | limitTo: 8">
-              <a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a>
-              <a href="{{item.url}}"><p>{{item.name}}</p></a>
-            </li>
+      <div class="game-section col-xs-12 col-sm-9 col-md-8">
+          <ul class="nav nav-tabs" justified="true" ng-init='main.active.tab = "Top"'>
+            <li ng-class="{active: main.active.tab == 'Top'}"><a ng-click='main.active.tab = "Top"'>Top Rated</a></li>
+            <li ng-class="{active: main.active.tab == 'Upcoming'}"><a ng-click='main.active.tab = "Upcoming"'>Upcoming Games</a></li>
+            <li ng-class="{active: main.active.tab == 'Recent'}"><a ng-click='main.active.tab = "Recent"'>Recently Released</a></li>
           </ul>
-        </uib-tab>
 
-        <uib-tab index="1" heading="Upcoming">
-          <ul class="game-titles" ng-controller="UpcomingCtrl">
-            <h3>Upcoming Games</h3>
-            <li class="game-title-results" ng-repeat="item in upcomingGames | limitTo: 8">
-              <a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a>
-              <a href="{{item.url}}"><p>{{item.name}}</p></a>
-            </li>
-          </ul>
-        </uib-tab>
+          <div class="tab-content">
+            <div ng-switch="main.active.tab">
 
-        <uib-tab index="2" heading="Recent">
-          <ul class="game-titles" ng-controller="RecentCtrl">
-            <h3>Recent Games</h3>
-            <li class="game-title-results" ng-repeat="item in recentGames | limitTo: 8">
-              <a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a>
-              <a href="{{item.url}}"><p>{{item.name}}</p></a>
-            </li>
-          </ul>
-        </uib-tab>
-      </uib-tabset>
-      </div>
+              <div ng-switch-when="Top">
+                <ul class="game-titles" ng-controller="GameTitlesCtrl">
+                  <h3>Top Rated Games</h3>
+                  <li class="game-title-results" ng-repeat="item in topGameTitles | limitTo: 8">
+                    <a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a>
+                    <a href="{{item.url}}"><p>{{item.name}}</p></a>
+                  </li>
+                </ul>
+              </div>
+
+              <div ng-switch-when="Upcoming">
+                <ul class="game-titles" ng-controller="UpcomingCtrl">
+                  <h3>Upcoming Games</h3>
+                  <li class="game-title-results" ng-repeat="item in upcomingGames | limitTo: 8">
+                    <a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a>
+                    <a href="{{item.url}}"><p>{{item.name}}</p></a>
+                  </li>
+                </ul>
+              </div>
+
+              <div ng-switch-when="Recent">
+                <ul class="game-titles" ng-controller="RecentCtrl">
+                  <h3>Recent Games</h3>
+                  <li class="game-title-results" ng-repeat="item in recentGames | limitTo: 8">
+                    <a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a>
+                    <a href="{{item.url}}"><p>{{item.name}}</p></a>
+                  </li>
+                </ul>
+              </div><!-- end RecentCtrl -->
+            </div><!-- end ng-switch main.active.tab -->
+          </div> <!-- end tab-content -->
+      </div><!-- end first div after row div -->
 
       <div class="game-news col-xs-12 col-sm-3 col-md-4" ng-controller="MainCtrl">
       <p class="lead">
@@ -41,9 +50,10 @@
         <div class="article-data" ng-repeat="article in gameNews.articles | limitTo: 6">
             <a class="article-image" href="{{article.url}}"><img class="img-responsive" ng-src="{{article.urlToImage}}"></a>
             <a id="article-title" href="{{article.url}}"><p>{{article.title}}</p></a>
-        </div>
-      </p>
-    </div>
-  </div>
-</div>
+        </div><!-- end article data -->
+      </p><!-- lead -->
+    </div><!-- end game news -->
+
+  </div><!-- end row -->
+</div><!-- end game data -->
 </section>
