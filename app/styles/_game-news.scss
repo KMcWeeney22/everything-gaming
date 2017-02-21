@@ -1,16 +1,13 @@
-#game-media {
+.game-news {
+  float: right;
+  border-left: 1px solid black;
+  padding-left: 50px;
   position: relative;
   background-color: $white-bg-op;
   border-radius: 20px;
   padding-right: 50px;
   padding-left: 50px;
   text-align: center;
-}
-
-.game-news {
-  float: right;
-  border-left: 1px solid black;
-  padding-left: 50px;
 
   h3 {
     text-align: center;

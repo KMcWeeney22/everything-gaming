@@ -1,3 +1,13 @@
+.game-section {
+  position: relative;
+  background-color: $white-bg-op;
+  border-radius: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+  text-align: center;
+
+}
+
 ul.nav-tabs {
 
   li {
@@ -24,13 +34,31 @@ ul.nav-tabs {
   .game-title-results {
     list-style-type: none;
     display: inline-block;
-    float: left;
-    width: 48%;
+    width: 50%;
     padding: 20px;
+    padding-bottom: 50px;
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      padding-bottom: 15px;
+    }
 
     .img-responsive {
       margin: auto;
-
     }
+
+    #button {
+      margin-top: 20px;
+      color: black;
+      text-decoration: underline;
+      font-size: 16px;
+    }
+
+    #button:hover {
+      font-weight: bold;
+      color: green;
+    }
+
   }
 }
