@@ -41,6 +41,11 @@ angular
         controller: 'RecentCtrl',
         controllerAs: 'recent'
       })
+      .when('/gameInfo/:gameID', {
+        templateUrl: 'views/gameinfo.html',
+        controller: 'GameinfoCtrl',
+        controllerAs: 'gameInfo'
+      })
       .otherwise({
         redirectTo: '/'
       });

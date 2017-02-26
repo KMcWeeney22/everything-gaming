@@ -1,0 +1,21 @@
+.game-info {
+  background-color: $white-bg-op;
+  border-radius: 20px;
+  min-height: 500px;
+  padding-right: 30px;
+
+  h1 {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .cover-photo {
+    padding-left: 40px;
+    margin: auto auto;
+  }
+
+  .summary {
+    padding: 10px;
+  }
+}

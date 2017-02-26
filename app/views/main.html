@@ -16,7 +16,7 @@
                   <li class="game-title-results" ng-repeat="item in topGameTitles | limitTo: 10">
                     <p>{{item.name}}</p>
                     <p><a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a></p>
-                    <a ng-href="#" id="button">View Game Info</a>
+                    <a ng-href="#!/gameInfo/{{item.id}}" id="button">View Game Info</a>
                   </li>
                 </ul>
               </div>
@@ -27,7 +27,7 @@
                   <li class="game-title-results" ng-repeat="item in upcomingGames | limitTo: 10">
                     <p>{{item.name}}</p>
                     <p><a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a></p>
-                    <a ng-href="#" id="button">View Game Info</a>
+                    <a ng-href="#!/gameInfo/{{item.id}}" id="button">View Game Info</a>
                   </li>
                 </div>
               </div>
@@ -38,7 +38,7 @@
                   <li class="game-title-results" ng-repeat="item in recentGames | limitTo: 10">
                     <p>{{item.name}}</p>
                     <p><a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a></p>
-                    <a ng-href="#" id="button">View Game Info</a>
+                    <a ng-href="#!/gameInfo/{{item.id}}" id="button">View Game Info</a>
                   </li>
                 </ul>
               </div><!-- end RecentCtrl -->
