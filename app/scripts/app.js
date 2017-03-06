@@ -46,6 +46,11 @@ angular
         controller: 'GameinfoCtrl',
         controllerAs: 'gameInfo'
       })
+      .when('/videos', {
+        templateUrl: 'views/videos.html',
+        controller: 'VideosCtrl',
+        controllerAs: 'videos'
+      })
       .otherwise({
         redirectTo: '/'
       });

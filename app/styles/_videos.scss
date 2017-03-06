@@ -1,0 +1,19 @@
+.gaming-videos {
+  background-color: $white-bg-op;
+  border-radius: 20px;
+  padding-bottom: 30px;
+
+  h3{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+  }
+
+  .video-data {
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+  }
+}

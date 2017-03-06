@@ -1,0 +1,9 @@
+<div class="gaming-videos" ng-controller="VideosCtrl" aria-label="Recent videos in the video gaming industry">
+<p>
+  <h3>Recent Stories</h3>
+  <div class="video-data" ng-repeat="item in gameVideos.items">
+      <p>{{item.snippet.title}}</p>
+      <a href="https://www.youtube.com/watch?v={{item.id.videoId}}"><img class="img-responsive" ng-src="{{item.snippet.thumbnails.medium.url}}"></a>
+  </div><!-- end article data -->
+</p><!-- lead -->
+</div><!-- end game news -->

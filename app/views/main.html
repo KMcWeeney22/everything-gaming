@@ -49,7 +49,7 @@
       <div class="game-news col-xs-12 col-sm-3 col-md-3" ng-controller="MainCtrl" aria-label="Recent news in the video gaming industry">
       <p class="lead">
         <h3>Recent Stories</h3>
-        <div class="article-data" ng-repeat="article in gameNews.articles | limitTo: 6">
+        <div class="article-data" ng-repeat="article in gameNews.articles | limitTo: 8">
             <a class="article-image" href="{{article.url}}"><img class="img-responsive" alt="article photo" ng-src="{{article.urlToImage}}"></a>
             <a id="article-title" href="{{article.url}}"><p>{{article.title}}</p></a>
         </div><!-- end article data -->
