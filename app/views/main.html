@@ -10,47 +10,47 @@
           <div class="tab-content">
             <div ng-switch="main.active.tab">
 
-              <div class="repeat-data-container" ng-switch-when="Top">
-                <ul class="game-titles" ng-controller="GameTitlesCtrl">
+              <div class="repeat-data-container" ng-switch-when="Top" aria-label="The top rated video games from Internet Game Database">
+                <div class="game-titles" ng-controller="GameTitlesCtrl" aria-labelledby="tab1" role="tab">
                   <h3>Top Rated Games</h3>
                   <li class="game-title-results" ng-repeat="item in topGameTitles | limitTo: 10">
                     <p>{{item.name}}</p>
-                    <p><a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a></p>
-                    <a ng-href="#!/gameInfo/{{item.id}}" id="button">View Game Info</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="repeat-data-container" ng-switch-when="Upcoming">
-                <div class="game-titles" ng-controller="UpcomingCtrl">
-                  <h3>Upcoming Games</h3>
-                  <li class="game-title-results" ng-repeat="item in upcomingGames | limitTo: 10">
-                    <p>{{item.name}}</p>
-                    <p><a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a></p>
+                    <p><a class="game-image" href="{{item.url}}"><img class="img-responsive" alt="Cover photo for the video game {{item.name}}" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a></p>
                     <a ng-href="#!/gameInfo/{{item.id}}" id="button">View Game Info</a>
                   </li>
                 </div>
               </div>
 
-              <div class="repeat-data-container" ng-switch-when="Recent">
-                <ul class="game-titles" ng-controller="RecentCtrl">
+              <div class="repeat-data-container" ng-switch-when="Upcoming" aria-label="Video games that are about to be released">
+                <div class="game-titles" ng-controller="UpcomingCtrl" aria-labelledby="tab2" role="tab">
+                  <h3>Upcoming Games</h3>
+                  <li class="game-title-results" ng-repeat="item in upcomingGames | limitTo: 10">
+                    <p>{{item.name}}</p>
+                    <p><a class="game-image" href="{{item.url}}"><img class="img-responsive" alt="Cover photo for the video game {{item.name}}" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a></p>
+                    <a ng-href="#!/gameInfo/{{item.id}}" id="button">View Game Info</a>
+                  </li>
+                </div>
+              </div>
+
+              <div class="repeat-data-container" ng-switch-when="Recent" aria-label="The most recently released video games">
+                <ul class="game-titles" ng-controller="RecentCtrl" aria-labelledby="tab3" role="tab">
                   <h3>Recent Games</h3>
                   <li class="game-title-results" ng-repeat="item in recentGames | limitTo: 10">
                     <p>{{item.name}}</p>
-                    <p><a class="game-image" href="{{item.url}}"><img class="img-responsive" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a></p>
+                    <p><a class="game-image" href="{{item.url}}"><img class="img-responsive" alt="Cover photo for the video game {{item.name}}" ng-src="//images.igdb.com/igdb/image/upload/t_logo_med/{{item.cover.cloudinary_id}}.png"></a></p>
                     <a ng-href="#!/gameInfo/{{item.id}}" id="button">View Game Info</a>
                   </li>
                 </ul>
               </div><!-- end RecentCtrl -->
             </div><!-- end ng-switch main.active.tab -->
           </div> <!-- end tab-content -->
-      </div><!-- end first div after row div -->
+      </div><!-- game section div -->
 
-      <div class="game-news col-xs-12 col-sm-3 col-md-3" ng-controller="MainCtrl">
+      <div class="game-news col-xs-12 col-sm-3 col-md-3" ng-controller="MainCtrl" aria-label="Recent news in the video gaming industry">
       <p class="lead">
         <h3>Recent Stories</h3>
         <div class="article-data" ng-repeat="article in gameNews.articles | limitTo: 6">
-            <a class="article-image" href="{{article.url}}"><img class="img-responsive" ng-src="{{article.urlToImage}}"></a>
+            <a class="article-image" href="{{article.url}}"><img class="img-responsive" alt="article photo" ng-src="{{article.urlToImage}}"></a>
             <a id="article-title" href="{{article.url}}"><p>{{article.title}}</p></a>
         </div><!-- end article data -->
       </p><!-- lead -->
