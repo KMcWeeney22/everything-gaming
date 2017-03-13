@@ -19,7 +19,14 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist([
+      // Allow same origin resource loads.
+      'self',
+      // Allow loading from our assets domain.
+      'https://www.youtube.com/embed/**'
+    ]);
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -50,6 +57,11 @@ angular
         templateUrl: 'views/videos.html',
         controller: 'VideosCtrl',
         controllerAs: 'videos'
+      })
+      .when('/gameInfoVideos', {
+        templateUrl: 'views/gameinfovideos.html',
+        controller: 'GameinfovideosCtrl',
+        controllerAs: 'gameInfoVideos'
       })
       .otherwise({
         redirectTo: '/'

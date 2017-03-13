@@ -20,4 +20,8 @@ angular.module('everythingGamingApp')
       $scope.gameVideos = response.statusText;
 
     });
+
+    $scope.getIframeSrc = function (videoId) {
+      return 'https://www.youtube.com/embed/' + videoId;
+    };
   });
